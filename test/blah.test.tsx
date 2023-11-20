@@ -1,11 +1,11 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Default as Thing } from '../stories/Thing.stories';
+import { Tooltip } from '../src/stories/Tooltip';
 
-describe('Thing', () => {
+describe('Tooltip', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Thing />, div);
+    ReactDOM.render(<Tooltip label={'Hello World'} />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });
