@@ -1,4 +1,4 @@
-# Tooltip React Component
+# React Font Editor
 
 The **Tooltip** component is a tool that provides an information box with text formatting options for React applications.
 
