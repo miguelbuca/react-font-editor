@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, ReactNode } from 'react';
 import './tooltip.css';
 import { useTooltipController } from './tooltip.controller';
 
@@ -17,7 +17,7 @@ export interface TooltipProps {
   /**
    * Element content
    */
-  label: string;
+  label: ReactNode;
   /**
    * Font size list
    */
