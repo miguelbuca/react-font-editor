@@ -51,7 +51,7 @@ export interface TooltipProps {
 /**
  * Primary UI component for user interaction
  */
-export const Tooltip = ({
+const Tooltip = ({
   label,
   withColor = true,
   withDecoration = true,
@@ -163,3 +163,5 @@ export const Tooltip = ({
     </div>
   );
 };
+
+export default Tooltip

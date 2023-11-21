@@ -1,6 +1,6 @@
 # React Font Editor
 
-The **Tooltip** component is a tool that provides an information box with text formatting options for React applications.
+The omponent is a tool that provides an information box with text formatting options for React applications.
 
 ## Installation
 
@@ -16,13 +16,13 @@ Import the **Tooltip** component in your code:
 
 ````javascript
 import React from 'react';
-import { Tooltip } from 'react-font-editor';
+import FontEditor from 'react-font-editor';
 
 const App = () => {
   return (
     <div>
       <h1>Example Usage of Tooltip</h1>
-      <Tooltip
+      <FontEditor
         label="Tooltip Text"
         withColor={true}
         withDecoration={true}

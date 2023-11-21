@@ -1,12 +1,12 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Tooltip } from '../src/stories/Tooltip';
+import FontEditor  from '../src/stories/Tooltip';
 
 const App = () => {
   return (
     <div>
-      <Tooltip
+      <FontEditor
         fireEvent="click"
         label="Hello world"
         onStyleChanged={() => {}}
