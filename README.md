@@ -1,6 +1,6 @@
 # React Font Editor
 
-The omponent is a tool that provides an information box with text formatting options for React applications.
+The component is a tool that provides an information box with text formatting options for React applications.
 
 ## Installation
 
