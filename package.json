@@ -36,9 +36,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "name": "react-font-editor",
   "author": "miguelbuca",
   "module": "dist/react-font-editor.esm.js",
