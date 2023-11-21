@@ -16,7 +16,7 @@ Import the **Tooltip** component in your code:
 
 ````javascript
 import React from 'react';
-import { Tooltip } from '@your-username/react-tooltip';
+import { Tooltip } from 'react-font-editor';
 
 const App = () => {
   return (
