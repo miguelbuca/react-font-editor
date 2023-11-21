@@ -4,7 +4,7 @@ The component is a tool that provides an information box with text formatting op
 
 ## Installation
 
-To use the **Tooltip**, you can install it via npm:
+To use the **FontEditor**, you can install it via npm:
 
 ```bash
 npm install react-font-editor
@@ -12,7 +12,7 @@ npm install react-font-editor
 
 ## Usage
 
-Import the **Tooltip** component in your code:
+Import the **FontEditor** component in your code:
 
 ````javascript
 import React from 'react';
@@ -21,9 +21,9 @@ import FontEditor from 'react-font-editor';
 const App = () => {
   return (
     <div>
-      <h1>Example Usage of Tooltip</h1>
+      <h1>Example Usage of FontEditor</h1>
       <FontEditor
-        label="Tooltip Text"
+        label="FontEditor Text"
         withColor={true}
         withDecoration={true}
         withSize={true}
@@ -57,13 +57,13 @@ export default App;
 
 ## Props
 
-The **Tooltip** component has various configurable props to customize the behavior and style of the tooltip. Some of the main props include:
+The **FontEditor** component has various configurable props to customize the behavior and style of the FontEditor. Some of the main props include:
 
-- ``label``: Text to be displayed in the Tooltip.
+- ``label``: Text to be displayed in the FontEditor.
 - ``withColor``: Enables color selection option for text.
 - ``withDecoration``: Enables text formatting option (bold, italic, underline).
 - ``withSize``: Enables font size selection option.
-- ``fireEvent``: Defines the tooltip activation event (click or hover).
+- ``fireEvent``: Defines the FontEditor activation event (click or hover).
 - ``defaultValue``: Initial styles for the content.
 - ``onStyleChanged``: Callback function to capture style changes.
 Refer to the documentation or component implementation to see all available props.
