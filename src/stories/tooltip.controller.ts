@@ -110,7 +110,7 @@ export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
       args?.fireEvent === 'click' ? () => toggleHandler(!toggle) : undefined,
     onMouseOver:
       args?.fireEvent === 'hover' ? () => toggleHandler(true) : undefined,
-    onMouseOut: () => toggleHandler(false),
+    //onMouseOut: () => toggleHandler(false),
     onDoubleClick: () => toggleHandler(false),
   };
 

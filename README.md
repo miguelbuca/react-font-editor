@@ -2,6 +2,8 @@
 
 The component is a tool that provides an information box with text formatting options for React applications.
 
+[<img src="src/assets/img/exampe.png" width="400"/>](exampe.png)
+
 ## Installation
 
 To use the **FontEditor**, you can install it via npm:
