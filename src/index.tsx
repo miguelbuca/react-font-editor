@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement, ReactNode } from 'react';
+import React, { CSSProperties, ReactElement } from 'react';
 import { useTooltipController } from './controller';
 import './styles.css';
 
