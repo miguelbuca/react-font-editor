@@ -12,61 +12,6 @@ const meta: Meta<typeof Tooltip> = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
-  argTypes: {
-    //fontColor: { control: 'color' },
-    sizes: {
-      control: {
-        type: 'array',
-        items: {
-          type: 'number',
-        },
-      },
-      defaultValue: [
-        8,
-        9,
-        10,
-        11,
-        12,
-        14,
-        16,
-        18,
-        20,
-        22,
-        24,
-        26,
-        28,
-        36,
-        48,
-        72,
-      ],
-    },
-    fonts: {
-      control: {
-        type: 'array',
-        items: {
-          type: 'number',
-        },
-      },
-      defaultValue: [
-        8,
-        9,
-        10,
-        11,
-        12,
-        14,
-        16,
-        18,
-        20,
-        22,
-        24,
-        26,
-        28,
-        36,
-        48,
-        72,
-      ],
-    }
-  },
 };
 
 export default meta;
@@ -75,7 +20,7 @@ type Story = StoryObj<typeof Tooltip>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const FontEditor: Story = {
   args: {
-    label: 'Hello world',
+    label: "Hello world",
     withColor: true,
     withDecoration: true,
     withSize: true

@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from 'react';
+import React, { CSSProperties, ReactElement, ReactNode } from 'react';
 import { useTooltipController } from './controller';
 import './styles.css';
 
@@ -17,7 +17,7 @@ export interface TooltipProps {
   /**
    * Element content
    */
-  label: ReactNode;
+  label: ReactElement | string | number;
   /**
    * Font size list
    */
@@ -80,12 +80,8 @@ const Tooltip = ({
     withSize,
     fireEvent,
   });
-
-  return (
-    <div {...containerProps}>
-      <div className="tooltip-label" style={{ ...style }}>
-        {label}
-      </div>
+  const tooltipModal = (
+    <>
       {toggle && (
         <div onMouseOver={tooltipHoverHandler} className="tooltip-content">
           <div
@@ -160,8 +156,31 @@ const Tooltip = ({
           </div>
         </div>
       )}
-    </div>
+    </>
   );
+
+  const element =
+    typeof label !== 'string' && typeof label !== 'number' ? (
+      React.cloneElement(
+        label,
+        {
+          className: 'tooltip-label',
+          style,
+          ...containerProps,
+        },
+        <>
+          {label.props.children}
+          {tooltipModal}
+        </>
+      )
+    ) : (
+      <div className="tooltip-label" style={{ ...style }} {...containerProps}>
+        {label}
+        {tooltipModal}
+      </div>
+    );
+
+  return element;
 };
 
 export default Tooltip;
