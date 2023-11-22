@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react';
-import './tooltip.css';
-import { useTooltipController } from './tooltip.controller';
+import { useTooltipController } from './controller';
+import './styles.css';
 
 export interface TooltipProps {
   /**
@@ -13,7 +13,7 @@ export interface TooltipProps {
   /**
    * Event emit
    */
-  fireEvent?: 'click' | 'hover';
+  fireEvent: 'click' | 'hover';
   /**
    * Element content
    */
@@ -164,4 +164,4 @@ const Tooltip = ({
   );
 };
 
-export default Tooltip
+export default Tooltip;

@@ -5,7 +5,7 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { TooltipProps } from './Tooltip';
+import { TooltipProps } from '.';
 
 export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
   const [toggle, setToggle] = useState(false);

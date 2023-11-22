@@ -70,6 +70,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "size-limit": "^11.0.0",
     "storybook": "7.5.3",
     "tsdx": "^0.13.3",

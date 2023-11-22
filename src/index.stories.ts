@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Tooltip from './Tooltip';
+import Tooltip from '.';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof Tooltip> = {
@@ -40,7 +40,7 @@ const meta: Meta<typeof Tooltip> = {
         72,
       ],
     },
-       fonts: {
+    fonts: {
       control: {
         type: 'array',
         items: {
