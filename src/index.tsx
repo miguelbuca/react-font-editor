@@ -94,9 +94,9 @@ const Tooltip = ({
                 onChange={fontFamilyHandler}
                 className="tooltip-custom-select"
               >
-                {Object.keys(fonts).map((item, key) => (
-                  <option key={key} value={fonts[item]}>
-                    <span>{item}</span>
+                {Object.keys(fonts).map((item, index) => (
+                  <option key={index} value={fonts[item]}>
+                    <span>{Object.keys(fonts)[index]}</span>
                   </option>
                 ))}
               </select>
@@ -108,9 +108,9 @@ const Tooltip = ({
                   onChange={fontSizeHandler}
                   className="tooltip-custom-select"
                 >
-                  {Object.keys(sizes).map((item, key) => (
-                    <option key={key} value={sizes[item]}>
-                      <span>{item}</span>
+                  {Object.keys(sizes).map((item, index) => (
+                    <option key={index} value={sizes[item]}>
+                      <span>{Object.keys(sizes)[index]}</span>
                     </option>
                   ))}
                 </select>
