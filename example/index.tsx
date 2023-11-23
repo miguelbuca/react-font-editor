@@ -20,30 +20,16 @@ const App = () => {
     >
       <div
         style={{
-          minHeight: 100,
+          minHeight: 300,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
         }}
       >
         <FontEditor
           label="Your text edited."
-          fireEvent="hover"
-          defaultValue={{
-            fontFamily: 'Courier New, monospace',
-            fontSize: 14,
-            color: '#000000',
-            textDecoration: 'none',
-          }}
+          fireEvent="click"
           onStyleChanged={(value) => setValue(value)}
-          sizes={{
-            Small: 12,
-            Medium: 16,
-            Large: 20,
-          }}
-          fonts={{
-            Arial: 'Arial, sans-serif',
-            'Times New Roman': 'Times New Roman, serif',
-            Verdana: 'Verdana, sans-serif',
-            'Courier New': 'Courier New, monospace',
-          }}
         />
       </div>
       <div>

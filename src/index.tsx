@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement, memo } from 'react';
+import React, { CSSProperties, ReactElement } from 'react';
 import { useTooltipController } from './controller';
 import './styles.css';
 
@@ -80,12 +80,46 @@ const Tooltip = ({
     withSize,
     fireEvent,
   });
+
+  const ft = fonts || {
+    Roboto: 'Roboto, sans-serif',
+    'Open Sans': 'Open Sans, sans-serif',
+    Lato: 'Lato, sans-serif',
+    Montserrat: 'Montserrat, sans-serif',
+    Poppins: 'Poppins, sans-serif',
+    'Source Sans Pro': 'Source Sans Pro, sans-serif',
+    Ubuntu: 'Ubuntu, sans-serif',
+    Oswald: 'Oswald, sans-serif',
+    'Roboto Condensed': 'Roboto Condensed, sans-serif',
+    'Playfair Display': 'Playfair Display, serif',
+    Merriweather: 'Merriweather, serif',
+    Quicksand: 'Quicksand, sans-serif',
+    'Josefin Sans': 'Josefin Sans, sans-serif',
+    'Montserrat Alternates': 'Montserrat Alternates, sans-serif',
+    Oxygen: 'Oxygen, sans-serif',
+    Raleway: 'Raleway, sans-serif',
+    'Titillium Web': 'Titillium Web, sans-serif',
+    'Varela Round': 'Varela Round, sans-serif',
+    Archivo: 'Archivo, sans-serif',
+    Cabin: 'Cabin, sans-serif',
+    'Advent Pro': 'Advent Pro, cursive',
+    'Black Ops One': 'Black Ops One, cursive',
+    Cookie: 'Cookie, cursive',
+    Dosis: 'Dosis, cursive',
+    'Great Vibes': 'Great Vibes, cursive',
+    'Indie Flower': 'Indie Flower, cursive',
+    'Kaushan Script': 'Kaushan Script, cursive',
+    Lobster: 'Lobster, cursive',
+    Pacifico: 'Pacifico, cursive',
+    Sacramento: 'Sacramento, cursive',
+  };
+
   const tooltipModal = (
     <>
       {toggle && (
         <div onMouseOver={tooltipHoverHandler} className="tooltip-content">
           <div
-            onClick={e => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
             className="tooltip-content-container"
           >
             <div>
@@ -94,8 +128,8 @@ const Tooltip = ({
                 onChange={fontFamilyHandler}
                 className="tooltip-custom-select"
               >
-                {Object.keys(fonts).map((item, key) => (
-                  <option key={key} value={fonts[item]}>
+                {Object.keys(ft).map((item, key) => (
+                  <option key={key} value={ft[item]}>
                     <span>{item.toString()}</span>
                   </option>
                 ))}
@@ -183,4 +217,4 @@ const Tooltip = ({
   return element;
 };
 
-export default memo(Tooltip);
+export default Tooltip

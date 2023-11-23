@@ -22,29 +22,9 @@ export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
     'none'
   );
 
-  const [fonts, setFonts] = useState<
-    {
-      [Symbol in string]: string;
-    }
-  >({
-    Poppins: 'Poppins, sans-serif',
-    'Playfair Display': 'Playfair Display, serif',
-    Merriweather: 'Merriweather, serif',
-    'Fira Sans': 'Fira Sans, sans-serif',
-    'Dancing Script': 'Dancing Script, cursive',
-    Quicksand: 'Quicksand, sans-serif',
-    Pacifico: 'Pacifico, cursive',
-    'Josefin Sans': 'Josefin Sans, sans-serif',
-    Cinzel: 'Cinzel, serif',
-    'Libre Baskerville': 'Libre Baskerville, sans-serif',
-    'Abril Fatface': 'Abril Fatface, cursive',
-    'Great Vibes': 'Great Vibes, cursive',
-    'Baloo Bhai': 'Baloo Bhai, cursive',
-    Comfortaa: 'Comfortaa, cursive',
-    Caveat: 'Caveat, cursive',
-    Rochester: 'Rochester, cursive',
-    Spectral: 'Spectral, sans-serif',
-  });
+  const [fonts, setFonts] = useState<{
+    [Symbol in string]: string;
+  }>();
   const [sizes, setSizes] = useState<
     {
       [Symbol in string]: number;
@@ -71,17 +51,6 @@ export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
   useEffect(() => {
     args?.sizes && setSizes(args.sizes);
     args?.fonts && setFonts(args.fonts);
-
-   /* if (args?.defaultValue) {
-      args.defaultValue.fontFamily &&
-        setFontFamily(args.defaultValue.fontFamily);
-      args.defaultValue.fontSize && setFontSize(args.defaultValue.fontSize);
-      args.defaultValue.color && setColor(args.defaultValue.color);
-      args.defaultValue.textDecoration &&
-        setTextDecoration(
-          args.defaultValue.textDecoration as typeof textDecoration
-        );
-    }*/
   }, [args]);
 
   useEffect(() => {
