@@ -9,9 +9,13 @@ import { TooltipProps } from '.';
 
 export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
   const [toggle, setToggle] = useState(false);
-  const [fontFamily, setFontFamily] = useState<string>('');
-  const [fontSize, setFontSize] = useState<number | string>(16);
-  const [color, setColor] = useState('#000');
+  const [fontFamily, setFontFamily] = useState<string>(
+    args?.defaultValue?.fontFamily || ''
+  );
+  const [fontSize, setFontSize] = useState<number | string>(
+    args?.defaultValue?.fontSize || 16
+  );
+  const [color, setColor] = useState(args?.defaultValue?.color || '#000');
   const [fontWeight, setFontWeight] = useState<'normal' | 'bold'>('normal');
   const [fontStyle, setFontStyle] = useState<'normal' | 'italic'>('normal');
   const [textDecoration, setTextDecoration] = useState<'none' | 'underline'>(
@@ -68,7 +72,7 @@ export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
     args?.sizes && setSizes(args.sizes);
     args?.fonts && setFonts(args.fonts);
 
-    if (args?.defaultValue) {
+   /* if (args?.defaultValue) {
       args.defaultValue.fontFamily &&
         setFontFamily(args.defaultValue.fontFamily);
       args.defaultValue.fontSize && setFontSize(args.defaultValue.fontSize);
@@ -77,7 +81,7 @@ export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
         setTextDecoration(
           args.defaultValue.textDecoration as typeof textDecoration
         );
-    }
+    }*/
   }, [args]);
 
   useEffect(() => {
@@ -103,14 +107,14 @@ export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
 
   const containerProps: Pick<
     HTMLAttributes<HTMLDivElement>,
-    'onClick' | 'onMouseOver' | 'onMouseOut' | 'onDoubleClick' | 'className'
+    'onClick' | 'onMouseOver' | 'onMouseLeave' | 'onDoubleClick' | 'className'
   > = {
     className: 'tooltip-container',
     onClick:
       args?.fireEvent === 'click' ? () => toggleHandler(!toggle) : undefined,
     onMouseOver:
       args?.fireEvent === 'hover' ? () => toggleHandler(true) : undefined,
-    //onMouseOut: () => toggleHandler(false),
+    onMouseLeave: () => toggleHandler(false),
     onDoubleClick: () => toggleHandler(false),
   };
 

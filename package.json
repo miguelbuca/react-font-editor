@@ -79,6 +79,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
+    "react-app-polyfill": "^3.0.0",
     "rollup-plugin-postcss": "^4.0.2"
   }
 }

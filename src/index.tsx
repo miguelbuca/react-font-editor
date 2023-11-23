@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement } from 'react';
+import React, { CSSProperties, ReactElement, memo } from 'react';
 import { useTooltipController } from './controller';
 import './styles.css';
 
@@ -183,4 +183,4 @@ const Tooltip = ({
   return element;
 };
 
-export default Tooltip;
+export default memo(Tooltip);
