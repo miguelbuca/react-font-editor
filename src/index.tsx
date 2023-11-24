@@ -126,17 +126,31 @@ const Tooltip = ({
               <select
                 style={{
                   fontFamily: 'sans-serif',
+                  textDecoration: 'none',
+                  fontWeight: 'normal',
+                  fontStyle: 'normal',
                 }}
                 value={style.fontFamily}
                 onChange={fontFamilyHandler}
                 className="tooltip-custom-select"
               >
+                <option
+                  style={{
+                    fontFamily: 'inherit',
+                    textDecoration: 'none',
+                    fontWeight: 'normal',
+                    fontStyle: 'normal',
+                  }}
+                  label={'Auto'}
+                  value={'inherit'}
+                />
                 {Object.keys(ft).map((item, key) => (
                   <option
                     style={{
                       fontFamily: ft[item],
                       textDecoration: 'none',
                       fontWeight: 'normal',
+                      fontStyle: 'normal',
                     }}
                     key={key}
                     label={item.toString()}
@@ -149,7 +163,10 @@ const Tooltip = ({
               <div>
                 <select
                   style={{
-                    fontFamily: 'sans-serif',
+                    fontFamily: undefined,
+                    textDecoration: 'none',
+                    fontWeight: 'normal',
+                    fontStyle: 'normal',
                   }}
                   value={style.fontSize}
                   onChange={fontSizeHandler}
@@ -161,6 +178,7 @@ const Tooltip = ({
                         fontFamily: 'sans-serif',
                         textDecoration: 'none',
                         fontWeight: 'normal',
+                        fontStyle: 'normal',
                       }}
                       key={key}
                       label={parseInt(item.toString()).toString()}
