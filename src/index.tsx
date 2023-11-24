@@ -134,16 +134,6 @@ const Tooltip = ({
                 onChange={fontFamilyHandler}
                 className="tooltip-custom-select"
               >
-                <option
-                  style={{
-                    fontFamily: 'inherit',
-                    textDecoration: 'none',
-                    fontWeight: 'normal',
-                    fontStyle: 'normal',
-                  }}
-                  label={'Auto'}
-                  value={'inherit'}
-                />
                 {Object.keys(ft).map((item, key) => (
                   <option
                     style={{
@@ -163,7 +153,7 @@ const Tooltip = ({
               <div>
                 <select
                   style={{
-                    fontFamily: undefined,
+                    fontFamily: 'sans-serif',
                     textDecoration: 'none',
                     fontWeight: 'normal',
                     fontStyle: 'normal',

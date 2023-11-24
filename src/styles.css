@@ -144,7 +144,6 @@
   outline: none;
   appearance: none;
   -webkit-appearance: none;
-  z-index: 999999;
   opacity: 0;
   cursor: pointer;
 }
@@ -168,6 +167,8 @@
 
   .tooltip-content-container {
     flex-direction: column;
+    padding: .5rem 1rem;
+    z-index: 99999 !important;
   }
 
   .tooltip-content-container>* {
