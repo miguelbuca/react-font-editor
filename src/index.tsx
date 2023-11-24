@@ -124,6 +124,9 @@ const Tooltip = ({
           >
             <div>
               <select
+                style={{
+                  fontFamily: 'sans-serif',
+                }}
                 value={style.fontFamily}
                 onChange={fontFamilyHandler}
                 className="tooltip-custom-select"
@@ -131,7 +134,7 @@ const Tooltip = ({
                 {Object.keys(ft).map((item, key) => (
                   <option
                     style={{
-                      fontFamily: 'sans-serif',
+                      fontFamily: ft[item],
                       textDecoration: 'none',
                       fontWeight: 'normal',
                     }}
@@ -145,6 +148,9 @@ const Tooltip = ({
             {withSize && (
               <div>
                 <select
+                  style={{
+                    fontFamily: 'sans-serif',
+                  }}
                   value={style.fontSize}
                   onChange={fontSizeHandler}
                   className="tooltip-custom-select"
