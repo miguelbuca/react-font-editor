@@ -129,7 +129,16 @@ const Tooltip = ({
                 className="tooltip-custom-select"
               >
                 {Object.keys(ft).map((item, key) => (
-                  <option key={key} label={item.toString()} value={ft[item]} />
+                  <option
+                    style={{
+                      fontFamily: 'sans-serif',
+                      textDecoration: 'none',
+                      fontWeight: 'normal',
+                    }}
+                    key={key}
+                    label={item.toString()}
+                    value={ft[item]}
+                  />
                 ))}
               </select>
             </div>
@@ -142,6 +151,11 @@ const Tooltip = ({
                 >
                   {Object.keys(sizes).map((item, key) => (
                     <option
+                      style={{
+                        fontFamily: 'sans-serif',
+                        textDecoration: 'none',
+                        fontWeight: 'normal',
+                      }}
                       key={key}
                       label={parseInt(item.toString()).toString()}
                       value={sizes[item].toString()}
