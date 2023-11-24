@@ -13,7 +13,7 @@ export interface TooltipProps {
   /**
    * Event emit
    */
-  fireEvent: 'click' | 'hover';
+  fireEvent: 'click' | 'hover'| 'none';
   /**
    * Element content
    */
