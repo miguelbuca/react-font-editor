@@ -171,8 +171,8 @@ const Tooltip = ({
                         fontStyle: 'normal',
                       }}
                       key={key}
-                      label={parseInt(item.toString()).toString()}
-                      value={sizes[item].toString()}
+                      label={item.toString()}
+                      value={sizes[item]}
                     />
                   ))}
                 </select>
