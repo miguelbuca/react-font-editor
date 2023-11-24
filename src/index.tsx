@@ -129,9 +129,7 @@ const Tooltip = ({
                 className="tooltip-custom-select"
               >
                 {Object.keys(ft).map((item, key) => (
-                  <option key={key} value={ft[item]}>
-                    <span>{item.toString()}</span>
-                  </option>
+                  <option key={key} label={item.toString()} value={ft[item]} />
                 ))}
               </select>
             </div>
@@ -143,9 +141,11 @@ const Tooltip = ({
                   className="tooltip-custom-select"
                 >
                   {Object.keys(sizes).map((item, key) => (
-                    <option key={key} value={sizes[item]}>
-                      <span>{item.toString()}</span>
-                    </option>
+                    <option
+                      key={key}
+                      label={parseInt(item.toString()).toString()}
+                      value={sizes[item].toString()}
+                    />
                   ))}
                 </select>
               </div>
@@ -217,4 +217,4 @@ const Tooltip = ({
   return element;
 };
 
-export default Tooltip
+export default Tooltip;
