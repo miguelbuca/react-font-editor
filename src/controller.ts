@@ -16,20 +16,22 @@ export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
     args?.defaultValue?.fontSize || 16
   );
   const [color, setColor] = useState(args?.defaultValue?.color || '#000');
-  const [fontWeight, setFontWeight] = useState<'normal' | 'bold'>('normal');
-  const [fontStyle, setFontStyle] = useState<'normal' | 'italic'>('normal');
+  const [fontWeight, setFontWeight] = useState<'normal' | 'bold'>(
+    (args?.defaultValue?.fontWeight as 'normal' | 'bold') || 'normal'
+  );
+  const [fontStyle, setFontStyle] = useState<'normal' | 'italic'>(
+    (args?.defaultValue?.fontStyle as 'normal' | 'italic') || 'normal'
+  );
   const [textDecoration, setTextDecoration] = useState<'none' | 'underline'>(
-    'none'
+    (args?.defaultValue?.textDecoration as 'none' | 'underline') || 'none'
   );
 
   const [fonts, setFonts] = useState<{
     [Symbol in string]: string;
   }>();
-  const [sizes, setSizes] = useState<
-    {
-      [Symbol in string]: number;
-    }
-  >({
+  const [sizes, setSizes] = useState<{
+    [Symbol in string]: number;
+  }>({
     8: 8,
     9: 9,
     10: 10,
@@ -55,7 +57,7 @@ export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
 
   useEffect(() => {
     if (!fonts) return;
-    Object.values(fonts).forEach(value => {
+    Object.values(fonts).forEach((value) => {
       return (document.head.innerHTML += `<link href="https://fonts.googleapis.com/css2?family=${value}" rel="stylesheet">`);
     });
   }, [fonts]);
@@ -72,7 +74,7 @@ export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
   }, [fontFamily, fontSize, fontStyle, textDecoration, color, fontWeight]);
 
   const toggleHandler = (state?: boolean) =>
-    setToggle(prev => (state !== undefined ? state : !prev));
+    setToggle((prev) => (state !== undefined ? state : !prev));
 
   const containerProps: Pick<
     HTMLAttributes<HTMLDivElement>,
@@ -107,13 +109,13 @@ export const useTooltipController = (args?: Omit<TooltipProps, 'label'>) => {
     setColor(e.target.value);
 
   const fontWeightHandler = () =>
-    setFontWeight(prev => (prev === 'bold' ? 'normal' : 'bold'));
+    setFontWeight((prev) => (prev === 'bold' ? 'normal' : 'bold'));
 
   const textDecorationHandler = () =>
-    setTextDecoration(prev => (prev === 'underline' ? 'none' : 'underline'));
+    setTextDecoration((prev) => (prev === 'underline' ? 'none' : 'underline'));
 
   const fontStyleHandler = () =>
-    setFontStyle(prev => (prev === 'italic' ? 'normal' : 'italic'));
+    setFontStyle((prev) => (prev === 'italic' ? 'normal' : 'italic'));
 
   useEffect(() => {
     args?.onStyleChanged?.(style);

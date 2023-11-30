@@ -8,7 +8,7 @@ export interface TooltipProps {
    */
   defaultValue?: Pick<
     CSSProperties,
-    'fontFamily' | 'fontSize' | 'color' | 'textDecoration'
+    'fontFamily' | 'fontSize' | 'color' | 'textDecoration' | 'fontWeight' | 'fontStyle'
   >;
   /**
    * Event emit
